@@ -1,1 +1,4 @@
----@class CParticleSystem : CBaseModelEntityCParticleSystem = {}
+---@class CParticleSystem : CBaseModelEntity
+CParticleSystem = 
+{
+}

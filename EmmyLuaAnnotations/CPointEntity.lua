@@ -1,1 +1,4 @@
----@class CPointEntity : CBaseEntityCPointEntity = {}
+---@class CPointEntity : CBaseEntity
+CPointEntity = 
+{
+}

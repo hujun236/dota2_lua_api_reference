@@ -1,1 +1,4 @@
----@class CLogicScript : CBaseEntityCLogicScript = {}
+---@class CLogicScript : CBaseEntity
+CLogicScript = 
+{
+}

@@ -48,35 +48,35 @@ function saveClass(data)
     if data.members then
         for i,v in ipairs(data.members) do
             if v.kind == "field" then
-                local string = "--"..v.description.."\r"
-                string = string .. "\t---@type " .. table.concat( typesToStringArray(v.types), "|") .. "\r";
-                string = string .. "\t" .. v.name .. " = nil;\r\r"
+                local string = "--"..v.description.."\n"
+                string = string .. "\t---@type " .. table.concat( typesToStringArray(v.types), "|") .. "\n";
+                string = string .. "\t" .. v.name .. " = nil;\n\n"
                 table.insert(fieldsStrings, string)
             elseif v.kind == "function" then
-                local string = "--"..(v.description or "").."\r"
-                string = string .. "--available:" .. v.available .. "\r";
+                local string = "--"..(v.description or "").."\n"
+                string = string .. "--available:" .. v.available .. "\n";
                 local argNames = {}
                 for i, arg in ipairs(v.args) do
-                    string = string .. "---@param " .. arg.name .. " "  .. table.concat(typesToStringArray(arg.types),"|") .. "\r"
+                    string = string .. "---@param " .. arg.name .. " "  .. table.concat(typesToStringArray(arg.types),"|") .. "\n"
                     table.insert(argNames, arg.name)
                 end
-                string = string .. "---@return " .. table.concat(typesToStringArray(v.returns),",") .. "\r"
+                string = string .. "---@return " .. table.concat(typesToStringArray(v.returns),",") .. "\n"
 
 
-            string = string .. "function " .. data.name .. ":" .. v.name .. "(" ..table.concat(argNames,",") .. ")end\r\r"
+            string = string .. "function " .. data.name .. ":" .. v.name .. "(" ..table.concat(argNames,",") .. ")end\n\n"
                 table.insert(functionStrings, string)
             end
         end
     end
 
     local file = io.open(savePath, "w");
-    file:write("---@class " .. data.name .. (data.extend and (" : " .. data.extend) or "").. "\r") ;
-    file:write(data.name .. " = \r{\r")
+    file:write("---@class " .. data.name .. (data.extend and (" : " .. data.extend) or "").. "\n") ;
+    file:write(data.name .. " = \n{\n")
     for i, field in ipairs(fieldsStrings) do
         -- body
         file:write("\t" .. field)
     end
-    file:write("}\r")
+    file:write("}\n")
 
     for index, func in ipairs(functionStrings) do
         -- body
@@ -92,18 +92,18 @@ for i,v in ipairs(allData) do
     if v.kind == "class" then
         saveClass(v)
     elseif v.kind == "function" then
-        fileSaveFunction:write("--"..(v.description or "").."\r"); 
-        fileSaveFunction:write("--available:" .. v.available .. "\r")
+        fileSaveFunction:write("--"..(v.description or "").."\n"); 
+        fileSaveFunction:write("--available:" .. v.available .. "\n")
 
         local argNames = {}
         for i, arg in ipairs(v.args) do
-            fileSaveFunction:write("---@param " .. arg.name .. " "  .. table.concat(typesToStringArray(arg.types),"|") .. "\r")
+            fileSaveFunction:write("---@param " .. arg.name .. " "  .. table.concat(typesToStringArray(arg.types),"|") .. "\n")
             table.insert(argNames, arg.name)
         end
-        fileSaveFunction:write("---@return " .. table.concat(typesToStringArray(v.returns),",") .. "\r")
+        fileSaveFunction:write("---@return " .. table.concat(typesToStringArray(v.returns),",") .. "\n")
 
 
-        fileSaveFunction:write("function " .. v.name .. "(" ..table.concat(argNames,",") .. ")end\r\r")
+        fileSaveFunction:write("function " .. v.name .. "(" ..table.concat(argNames,",") .. ")end\n\n")
 
     end
 
@@ -125,21 +125,21 @@ allData = json.decode(fullString)
 for index, v in ipairs(allData) do
     -- body
     if v.kind == "constant" then
-        fileSaveFunction:write("--available:" .. v.available .. "\r")
-        fileSaveFunction:write(v.name .. " = " .. v.value ..  "\r\r")
+        fileSaveFunction:write("--available:" .. v.available .. "\n")
+        fileSaveFunction:write(v.name .. " = " .. v.value ..  "\n\n")
     elseif v.kind == "enum" then
-        fileSaveFunction:write("--available:" .. v.available .. "\r")
-        fileSaveFunction:write(v.name .. " = \r{\r")
+        fileSaveFunction:write("--available:" .. v.available .. "\n")
+        fileSaveFunction:write(v.name .. " = \n{\n")
 
         for index, enum in ipairs(v.members) do
             -- body
             if enum.description then
-                fileSaveFunction:write("\t--" .. enum.description .. "\r")
+                fileSaveFunction:write("\t--" .. enum.description .. "\n")
             end
-            fileSaveFunction:write("\t" .. enum.name .. " = " .. tostring(enum.value) ..  ";\r\r")
+            fileSaveFunction:write("\t" .. enum.name .. " = " .. tostring(enum.value) ..  ";\n\n")
 
         end
-        fileSaveFunction:write("}\r\r")
+        fileSaveFunction:write("}\n\n")
     end
 end
 

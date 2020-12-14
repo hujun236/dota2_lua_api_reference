@@ -1,1 +1,4 @@
----@class CEntityScriptFrameworkCEntityScriptFramework = {}
+---@class CEntityScriptFramework
+CEntityScriptFramework = 
+{
+}
