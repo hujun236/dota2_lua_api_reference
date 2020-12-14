@@ -11,7 +11,7 @@ function CEntities:CreateByClassname(className)end
 --Finds all entities by class name. Returns an array containing all the found entities.
 --available:server
 ---@param className string
----@return CBaseEntity
+---@return CBaseEntity[]
 function CEntities:FindAllByClassname(className)end
 
 --Find entities by class name within a radius.
@@ -19,19 +19,19 @@ function CEntities:FindAllByClassname(className)end
 ---@param className string
 ---@param location Vector
 ---@param radius float
----@return CBaseEntity
+---@return CBaseEntity[]
 function CEntities:FindAllByClassnameWithin(className,location,radius)end
 
 --Find entities by model name.
 --available:server
 ---@param modelName string
----@return CBaseEntity
+---@return CBaseEntity[]
 function CEntities:FindAllByModel(modelName)end
 
 --Find all entities by name. Returns an array containing all the found entities in it.
 --available:server
 ---@param name string
----@return CBaseEntity
+---@return CBaseEntity[]
 function CEntities:FindAllByName(name)end
 
 --Find entities by name within a radius.
@@ -39,20 +39,20 @@ function CEntities:FindAllByName(name)end
 ---@param name string
 ---@param location Vector
 ---@param radius float
----@return CBaseEntity
+---@return CBaseEntity[]
 function CEntities:FindAllByNameWithin(name,location,radius)end
 
 --Find entities by targetname.
 --available:server
 ---@param target string
----@return CBaseEntity
+---@return CBaseEntity[]
 function CEntities:FindAllByTarget(target)end
 
 --Find entities within a radius.
 --available:server
 ---@param location Vector
 ---@param radius float
----@return CBaseEntity
+---@return CBaseEntity[]
 function CEntities:FindAllInSphere(location,radius)end
 
 --Find entities by class name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search.

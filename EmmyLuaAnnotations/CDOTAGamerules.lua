@@ -136,7 +136,7 @@ function CDOTAGamerules:GetAnnouncer(team)end
 
 --Returns the hero unit names banned in this game, if any.
 --available:both
----@return string
+---@return string[]
 function CDOTAGamerules:GetBannedHeroes()end
 
 --Returns the difficulty level of the custom game mode.

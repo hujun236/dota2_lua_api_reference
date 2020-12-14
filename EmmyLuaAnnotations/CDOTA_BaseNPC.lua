@@ -187,13 +187,13 @@ function CDOTA_BaseNPC:FindAbilityByName(abilityName)end
 
 --Returns a table of all of the modifiers on the NPC.
 --available:server
----@return CDOTA_Buff
+---@return CDOTA_Buff[]
 function CDOTA_BaseNPC:FindAllModifiers()end
 
 --Returns a table of all of the modifiers on the NPC with the passed name (modifierName).
 --available:server
 ---@param modifierName string
----@return CDOTA_Buff
+---@return CDOTA_Buff[]
 function CDOTA_BaseNPC:FindAllModifiersByName(modifierName)end
 
 --Get handle to first item in inventory, else nil.

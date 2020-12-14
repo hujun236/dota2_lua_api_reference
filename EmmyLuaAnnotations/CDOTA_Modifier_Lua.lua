@@ -199,7 +199,7 @@ function CDOTA_Modifier_Lua:CheckState()end
 
 --Return a list of modifier functions this modifier implements.
 --available:both
----@return modifierfunction
+---@return modifierfunction[]
 function CDOTA_Modifier_Lua:DeclareFunctions()end
 
 --

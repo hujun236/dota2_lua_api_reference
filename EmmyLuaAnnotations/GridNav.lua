@@ -29,7 +29,7 @@ function GridNav:FindPathLength(start,end)end
 ---@param position Vector
 ---@param radius float
 ---@param fullCollision bool
----@return CDOTA_MapTree
+---@return CDOTA_MapTree[]
 function GridNav:GetAllTreesAroundPoint(position,radius,fullCollision)end
 
 --Get the X position of the center of a given X index.

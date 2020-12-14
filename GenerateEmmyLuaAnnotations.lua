@@ -21,7 +21,7 @@ function typesToStringArray(t)
        
         if type(singleType) == "table" then
             if singleType.kind == "array" then
-                table.insert(stringArray, table.concat(typesToStringArray(singleType.types), "|"));
+                table.insert(stringArray, table.concat(typesToStringArray(singleType.types), "|") .. "[]");
             elseif singleType.kind == "table" then
                 table.insert(stringArray, "table");
             elseif singleType.kind == "function" then

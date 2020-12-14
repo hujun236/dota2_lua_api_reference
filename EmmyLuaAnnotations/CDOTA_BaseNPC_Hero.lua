@@ -48,7 +48,7 @@ function CDOTA_BaseNPC_Hero:GetAbilityPoints()end
 
 --
 --available:server
----@return CDOTA_BaseNPC
+---@return CDOTA_BaseNPC[]
 function CDOTA_BaseNPC_Hero:GetAdditionalOwnedUnits()end
 
 --

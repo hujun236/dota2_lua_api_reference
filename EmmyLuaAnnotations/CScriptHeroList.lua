@@ -4,7 +4,7 @@ CScriptHeroList =
 }
 --Returns all the heroes in the world.
 --available:server
----@return CDOTA_BaseNPC_Hero
+---@return CDOTA_BaseNPC_Hero[]
 function CScriptHeroList:GetAllHeroes()end
 
 --Get the Nth hero in the Hero List.

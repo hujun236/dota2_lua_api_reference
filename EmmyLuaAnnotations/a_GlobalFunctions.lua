@@ -129,7 +129,7 @@ function CreateHTTPRequestScriptVM(method,url)end
 ---@param padding int
 ---@param scramblePosition bool
 ---@param findClearSpace bool
----@return CDOTA_BaseNPC_Hero
+---@return CDOTA_BaseNPC_Hero[]
 function CreateIllusions(owner,heroToCopy,modifierKeys,numIllusions,padding,scramblePosition,findClearSpace)end
 
 --Create a DOTA item.
@@ -628,7 +628,7 @@ function FindSpawnEntityForTeam(team)end
 ---@param teamFilter DOTA_UNIT_TARGET_TEAM
 ---@param typeFilter DOTA_UNIT_TARGET_TYPE
 ---@param flagFilter DOTA_UNIT_TARGET_FLAGS
----@return CDOTA_BaseNPC
+---@return CDOTA_BaseNPC[]
 function FindUnitsInLine(team,startPos,endPos,cacheUnit,width,teamFilter,typeFilter,flagFilter)end
 
 --Finds the units in a given radius with the given flags.
@@ -642,7 +642,7 @@ function FindUnitsInLine(team,startPos,endPos,cacheUnit,width,teamFilter,typeFil
 ---@param flagFilter DOTA_UNIT_TARGET_FLAGS
 ---@param order FindOrder
 ---@param canGrowCache bool
----@return CDOTA_BaseNPC
+---@return CDOTA_BaseNPC[]
 function FindUnitsInRadius(team,location,cacheUnit,radius,teamFilter,typeFilter,flagFilter,order,canGrowCache)end
 
 --Fire Entity's Action Input w/no data.

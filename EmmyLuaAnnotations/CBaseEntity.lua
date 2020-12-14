@@ -149,7 +149,7 @@ function CBaseEntity:GetCenter()end
 
 --Get the entities parented to this entity.
 --available:server
----@return CBaseEntity
+---@return CBaseEntity[]
 function CBaseEntity:GetChildren()end
 
 --Looks up a context and returns it if available. May return string, float, or null (if the context isn't found).
