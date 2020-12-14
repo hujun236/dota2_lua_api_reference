@@ -110,9 +110,9 @@ function CDOTA_Buff:GetStackCount()end
 
 --
 --available:both
----@param function modifierfunction
+---@param _function modifierfunction
 ---@return bool
-function CDOTA_Buff:HasFunction(function)end
+function CDOTA_Buff:HasFunction(_function)end
 
 --Increase this modifier's stack count by 1.
 --available:both

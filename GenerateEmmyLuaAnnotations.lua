@@ -40,6 +40,23 @@ function typesToStringArray(t)
     return stringArray;
 end
 
+local ReservedWords = {
+}
+ReservedWords['function'] = true;
+ReservedWords['end'] = true;
+ReservedWords['for'] = true;
+ReservedWords['while'] = true;
+ReservedWords['local'] = true;
+ReservedWords['and'] = true;
+ReservedWords['or'] = true;
+
+function fixReservedWord(name)
+    if ReservedWords[name] then
+        return "_"..name;
+    end
+    return name
+end
+
 function saveClass(data)
     local savePath = targetDir .. "/" .. data.name .. ".lua"
 
@@ -57,6 +74,7 @@ function saveClass(data)
                 string = string .. "--available:" .. v.available .. "\n";
                 local argNames = {}
                 for i, arg in ipairs(v.args) do
+                    arg.name = fixReservedWord(arg.name);
                     string = string .. "---@param " .. arg.name .. " "  .. table.concat(typesToStringArray(arg.types),"|") .. "\n"
                     table.insert(argNames, arg.name)
                 end

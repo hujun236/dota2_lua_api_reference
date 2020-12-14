@@ -5,9 +5,9 @@ GridNav =
 --Determine if it is possible to reach the specified end point from the specified start point. bool.
 --available:server
 ---@param start Vector
----@param end Vector
+---@param _end Vector
 ---@return bool
-function GridNav:CanFindPath(start,end)end
+function GridNav:CanFindPath(start,_end)end
 
 --Destroy all trees in the area(vPosition, flRadius, bFullCollision.
 --available:server
@@ -20,9 +20,9 @@ function GridNav:DestroyTreesAroundPoint(arg1,arg2,arg3)end
 --Find a path between the two points an return the length of the path. If there is not a path between the points the returned value will be -1.
 --available:server
 ---@param start Vector
----@param end Vector
+---@param _end Vector
 ---@return float
-function GridNav:FindPathLength(start,end)end
+function GridNav:FindPathLength(start,_end)end
 
 --Returns a table full of tree HSCRIPTS.
 --available:server

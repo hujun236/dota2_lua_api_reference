@@ -260,24 +260,24 @@ function CDOTABaseGameMode:IsDaynightCycleDisabled()end
 
 --Set function and context for real time combat analyzer query failed.
 --available:server
----@param function function
+---@param _function function
 ---@param context table
 ---@return nil
-function CDOTABaseGameMode:ListenForQueryFailed(function,context)end
+function CDOTABaseGameMode:ListenForQueryFailed(_function,context)end
 
 --Set function and context for real time combat analyzer query progress changed.
 --available:server
----@param function function
+---@param _function function
 ---@param context table
 ---@return nil
-function CDOTABaseGameMode:ListenForQueryProgressChanged(function,context)end
+function CDOTABaseGameMode:ListenForQueryProgressChanged(_function,context)end
 
 --Set function and context for real time combat analyzer query succeeded.
 --available:server
----@param function function
+---@param _function function
 ---@param context table
 ---@return nil
-function CDOTABaseGameMode:ListenForQuerySucceeded(function,context)end
+function CDOTABaseGameMode:ListenForQuerySucceeded(_function,context)end
 
 --Remove an item to purchase at a custom shop.
 --available:server
