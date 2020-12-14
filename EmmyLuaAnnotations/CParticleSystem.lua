@@ -1,0 +1,1 @@
+---@class CParticleSystem : CBaseModelEntityCParticleSystem = {}
